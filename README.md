@@ -12,6 +12,14 @@ Open your `~/Downloads` directory. Or your Desktop. It's probably a mess...
 
 ## What it does
 
+## Supported file types:
+
+- .pdf
+- .txt
+- .png
+- .jpg
+- .jpeg
+
 LlamaFS is a self-organizing file manager. It automatically renames and organizes your files based on their contents and well-known conventions (e.g., time). It supports many kinds of file, and even images (through Moondream) and audio (through Whisper).
 
 LlamaFS runs in two "modes" - as a batch job (batch mode), and an interactive daemon (watch mode).
@@ -50,6 +58,20 @@ Before installing, ensure you have the following requirements:
 
 ### Installing
 
+### Download this package before anything alse
+```bash
+sudo apt install libnss3
+```
+
+**And This also**
+
+```bash
+sudo apt update
+sudo apt install -y libnss3 libatk1.0-0 libx11-xcb1 libgtk-3-0 libasound2
+```
+
+### Installing
+
 To install the project, follow these steps:
 1. Clone the repository:
    ```bash
@@ -75,6 +97,16 @@ To serve the application locally using FastAPI, run the command
    ```bash
    fastapi dev server.py
    ```
+
+if FastAPI is not running that install `uvicorn`
+```bash
+pip install uvicorn
+```
+
+and serve the App using this command
+```bash
+uvicorn server:app --reload
+```
 
 ## Change the directory to `electron-react-app` and than install the npm packages 
 ```bash
